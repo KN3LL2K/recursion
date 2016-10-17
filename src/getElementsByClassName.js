@@ -16,10 +16,10 @@ var getElementsByClassName = function(className) {
         children.push(nodes[each]);
       }
     }
-    var toCheck = element.className.split(' ');
-    if (toCheck.indexOf(className) >= 0) {
-        result.push(element)
-      }
+    if (element.classList.contains(className)) {
+      result.push(element);
+    }
+    
     for (var i = 0; i < children.length; i++){
       inspectElement(children[i], result);
     }
